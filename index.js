@@ -1,6 +1,6 @@
 import 'dotenv/config'
-const http = require('http')
-const app = require('./app')
+import http from 'http'
+import app from './app'
 
 const PORT = process.env.PORT || 4000
 

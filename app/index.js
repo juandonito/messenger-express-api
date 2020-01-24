@@ -1,6 +1,10 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 
+import dbConnect from './db'
+
+dbConnect()
+
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended : true }))

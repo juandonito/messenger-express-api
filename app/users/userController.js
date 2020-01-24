@@ -14,13 +14,12 @@ export const postUser = (req, res) => {
 		password
 	})
 
-	user.save((err, user) => {
+	user.save((err) => {
 		if(err){
 			res.send(err)
 		}else{
 			res.send({
-				message: 'User successfuly created',
-				data: user
+				message: 'User successfuly created'
 			})
 		}
 	})

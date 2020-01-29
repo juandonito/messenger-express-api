@@ -53,3 +53,20 @@ export const getUser = (req, res) => {
 		}
 	})
 }
+
+export const deleteUser = (req, res) => {
+
+	const userId = req.params._id
+
+	User.findOneAndDelete({ _id: userId }, ['username, mail'], (err, user) => {
+		if(err){
+			res.send(err)
+		}else{
+			console.log(user)
+			res.send({
+				message: `User successfully deleted`
+			})
+		}
+	})
+
+}

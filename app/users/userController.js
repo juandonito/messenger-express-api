@@ -24,3 +24,17 @@ export const postUser = (req, res) => {
 		}
 	})
 }
+
+export const getUsers = (req, res) => {
+
+	User.find({}, ['username', 'mail'], (err, users) => {
+		if(err){
+			res.send(err)
+		}else{
+			res.send({
+				data: users
+			})
+		}
+	})
+
+}

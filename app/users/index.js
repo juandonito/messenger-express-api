@@ -8,4 +8,7 @@ usersRouter.route('/')
 	.get(userController.getUsers)
 	.post(userController.postUser)
 
+usersRouter.route('/:_id')
+	.get(userController.getUser)
+
 export default usersRouter

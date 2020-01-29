@@ -38,3 +38,18 @@ export const getUsers = (req, res) => {
 	})
 
 }
+
+export const getUser = (req, res) => {
+
+	const userId = req.params._id
+
+	User.findOne({ _id : userId }, ['username', 'mail'], (err, user) => {
+		if(err){
+			res.send(err)
+		}else{
+			res.send({
+				data: user
+			})
+		}
+	})
+}
